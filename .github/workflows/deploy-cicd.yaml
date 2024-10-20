@@ -13,11 +13,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up SSH
-        uses: Sithi5/remote-ssh-commands-action@1.1.2
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          ssh-private-key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           script: "cd /home/ubuntu && ./deploy.sh"
 
 
